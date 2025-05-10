@@ -12,8 +12,8 @@ CMD=$0
 
 ROOT="ml-nlffigen"
 HEAP_IMAGE=""
-TWOUP=`pwd`/../..
-BIN=${INSTALLDIR:-$TWOUP}/bin
+THREEUP=`pwd`/../../..
+BIN=${INSTALLDIR:-$THREEUP}/bin
 BUILD="$BIN/ml-build"
 
 #

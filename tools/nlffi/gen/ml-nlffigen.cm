@@ -27,6 +27,7 @@ is
 
 	sizes-sparc.sml
 	sizes-x86.sml
+	sizes-x86-64.sml
 	sizes-ppc.sml
 
 	endian-little.sml
@@ -46,6 +47,8 @@ is
 #   endif
 # elif defined (ARCH_X86)
 	default-sizes-x86.sml
+# elif defined (ARCH_AMD64)
+  default-sizes-x86-64.sml
 #   if defined (OPSYS_UNIX)
 	default-name-x86-unix.sml
 #   elif defined (OPSYS_WIN32)
