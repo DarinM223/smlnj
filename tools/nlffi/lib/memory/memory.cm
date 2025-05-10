@@ -22,19 +22,19 @@ is
 	memalloc.sig
 	memory.sig
 	linkage.sig
-	bitop-fn.sml			(lambdasplit:infinity)
+	bitop-fn.sml
 
 # if defined (BIG_ENDIAN)
-     	memaccess-64-big.sml		(lambdasplit:infinity)
+     	memaccess-64-big.sml
 # elif defined (LITTLE_ENDIAN)
-     	memaccess-64-little.sml		(lambdasplit:infinity)
+     	memaccess-64-little.sml
 # else
 # error Cannot determine endianess.
 # endif
 
 # if (defined(ARCH_X86) orelse defined(ARCH_SPARC) orelse defined(ARCH_PPC)) andalso (defined(OPSYS_UNIX) orelse defined(OPSYS_WIN32))
 
-	memaccess-a4s2i4l4f4d8.sml	(lambdasplit:infinity)
+	memaccess-a4s2i4l4f4d8.sml
 # elif defined(ARCH_AMD64)
   memaccess-a8s2i4l8f4d8.sml
 # else
@@ -44,13 +44,13 @@ is
 
 # if defined(OPSYS_WIN32)
 	main-lib-win32.sml
-	memalloc-a4-win32.sml		(lambdasplit:infinity)
+	memalloc-a4-win32.sml
 # else
 	main-lib-unix.sml
-	memalloc-a4-unix.sml		(lambdasplit:infinity)
+	memalloc-a4-unix.sml
 # endif
 
-	memory.sml			(lambdasplit:infinity)
+	memory.sml
 
 	linkage-dlopen.sml
-	mlrep-i32f64.sml		(lambdasplit:infinity)
+	mlrep-i32f64.sml

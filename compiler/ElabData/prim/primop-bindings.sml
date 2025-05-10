@@ -544,6 +544,8 @@ structure PrimopBindings : sig
 	    mkLd("int16", BT.int32Ty, P.INT 16) :-:
 	    mkLd("word32", BT.word32Ty, P.UINT 32) :-:
 	    mkLd("int32", BT.int32Ty, P.INT 32) :-:
+	    mkLd("word64", BT.word64Ty, P.UINT 64) :-:
+	    mkLd("int64", BT.int64Ty, P.INT 64) :-:
 	    mkLd("float32", BT.realTy, P.FLOAT 32) :-:
 	    mkLd("float64", BT.realTy, P.FLOAT 64) :-:
 	    mkSt("word8", BT.word32Ty, P.UINT 8) :-:
@@ -552,6 +554,8 @@ structure PrimopBindings : sig
 	    mkSt("int16", BT.int32Ty, P.INT 16) :-:
 	    mkSt("word32", BT.word32Ty, P.UINT 32) :-:
 	    mkSt("int32", BT.int32Ty, P.INT 32) :-:
+	    mkSt("word64", BT.word64Ty, P.UINT 64) :-:
+	    mkSt("int64", BT.int64Ty, P.INT 64) :-:
 	    mkSt("float32", BT.realTy, P.FLOAT 32) :-:
 	    mkSt("float64", BT.realTy, P.FLOAT 64) :-:
 	  (* load/store raw values with offset *)
@@ -561,6 +565,8 @@ structure PrimopBindings : sig
 	    mkSub("int16", BT.int32Ty, P.INT 16) :-:
 	    mkSub("word32", BT.word32Ty, P.UINT 32) :-:
 	    mkSub("int32", BT.int32Ty, P.INT 32) :-:
+	    mkSub("word64", BT.word64Ty, P.UINT 64) :-:
+	    mkSub("int64", BT.int64Ty, P.INT 64) :-:
 	    mkSub("float32", BT.realTy, P.FLOAT 32) :-:
 	    mkSub("float64", BT.realTy, P.FLOAT 64) :-:
 	    mkUpd("word8", BT.word32Ty, P.UINT 8) :-:
@@ -569,6 +575,8 @@ structure PrimopBindings : sig
 	    mkUpd("int16", BT.int32Ty, P.INT 16) :-:
 	    mkUpd("word32", BT.word32Ty, P.UINT 32) :-:
 	    mkUpd("int32", BT.int32Ty, P.INT 32) :-:
+	    mkUpd("word64", BT.word64Ty, P.UINT 64) :-:
+	    mkUpd("int64", BT.int64Ty, P.INT 64) :-:
 	    mkUpd("float32", BT.realTy, P.FLOAT 32) :-:
 	    mkUpd("float64", BT.realTy, P.FLOAT 64)
 	  end
