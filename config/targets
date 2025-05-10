@@ -151,9 +151,9 @@ request ckit
 #
 # NOTE: currently NLFFI is not supported on 64-bit machines
 #
-if SIZE_32
+# if SIZE_32
   request ml-nlffi-lib
-endif
+# endif
 
 # build ML-NLFFI-Gen, a program generator tool used in conjunction with
 # the new "NLFFI" foreign function interface.  The tool generates ML

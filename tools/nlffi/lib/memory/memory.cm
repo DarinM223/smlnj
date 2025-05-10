@@ -8,7 +8,7 @@
  *)
 (primitive)
 Library
-	signature CMEMORY	
+	signature CMEMORY
 	structure CMemory
 	signature DYN_LINKAGE
 	structure DynLinkage
@@ -35,6 +35,8 @@ is
 # if (defined(ARCH_X86) orelse defined(ARCH_SPARC) orelse defined(ARCH_PPC)) andalso (defined(OPSYS_UNIX) orelse defined(OPSYS_WIN32))
 
 	memaccess-a4s2i4l4f4d8.sml	(lambdasplit:infinity)
+# elif defined(ARCH_AMD64)
+  memaccess-a8s2i4l8f4d8.sml
 # else
 # error architecture not supported yet
 # endif
