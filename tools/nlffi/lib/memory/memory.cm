@@ -21,7 +21,6 @@ is
 	memaccess.sig
 	memalloc.sig
 	memory.sig
-	linkage.sig
 	bitop-fn.sml
 
 # if defined (BIG_ENDIAN)
@@ -52,6 +51,7 @@ is
 
 	memory.sml
 
-	linkage-dlopen.sml
 	(* mlrep-i32f64.sml *)
 	mlrep-i64f64.sml
+	linkage.sig
+	linkage-dlopen.sml

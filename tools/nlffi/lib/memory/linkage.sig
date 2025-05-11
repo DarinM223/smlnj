@@ -28,7 +28,7 @@ signature DYN_LINKAGE = sig
 
     (* fetch the actual address from an address handle; the value obtained
      * is not valid across export{ML,Fn}/resume cycles *)
-    val addr : addr_handle -> Word32.word
+    val addr : addr_handle -> MLRep.LongUnsigned.word
 
     (* unlink previously linked DL; this immediately invalidates all
      * symbol addresses and handles associated with this library *)

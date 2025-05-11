@@ -15,7 +15,7 @@ structure DynLinkage :> DYN_LINKAGE = struct
 
     local
 	type era = unit ref
-	type addr = Word32.word
+	type addr = MLRep.LongUnsigned.word
 
 	(* a handle remembers an address and the era of its creation as
 	 * well as a function to re-create the address when necessary *)
@@ -29,13 +29,13 @@ structure DynLinkage :> DYN_LINKAGE = struct
 	structure CI = Unsafe.CInterface
 
 	(* low-level linkage via dlopen/dlsym *)
-	val dlopen : string option * bool * bool -> Word32.word =
+	val dlopen : string option * bool * bool -> MLRep.LongUnsigned.word =
 	    CI.c_function "UNIX-Dynload" "dlopen"
-	val dlsym : Word32.word * string -> Word32.word =
+	val dlsym : MLRep.LongUnsigned.word * string -> MLRep.LongUnsigned.word =
 	    CI.c_function "UNIX-Dynload" "dlsym"
 	val dlerror : unit -> string option =
 	    CI.c_function "UNIX-Dynload" "dlerror"
-	val dlclose : Word32.word -> unit =
+	val dlclose : MLRep.LongUnsigned.word -> unit =
 	    CI.c_function "UNIX-Dynload" "dlclose"
 
 	(* label used for CleanUp *)
