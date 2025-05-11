@@ -17,6 +17,7 @@ structure RawMemInlineT =
  * operations.
  *)
     type c_pointer = word64
+    exception NotSupportedYet
 
     val w8l  : c_pointer -> word32        = InLine.raw_load_word8
     val i8l  : c_pointer -> int32         = InLine.raw_load_int8
@@ -26,8 +27,10 @@ structure RawMemInlineT =
     val w64l : c_pointer -> word64        = InLine.raw_load_word64
     val i32l : c_pointer -> int32         = InLine.raw_load_int32
     val i64l : c_pointer -> int64         = InLine.raw_load_int64
-    val f32l : c_pointer -> real          = InLine.raw_load_float32
-    val f64l : c_pointer -> real          = InLine.raw_load_float64
+    val f32l : c_pointer -> real          = fn _ => raise NotSupportedYet
+    val f64l : c_pointer -> real          = fn _ => raise NotSupportedYet
+    (* val f32l : c_pointer -> real          = InLine.raw_load_float32 *)
+    (* val f64l : c_pointer -> real          = InLine.raw_load_float64 *)
     val w8s  : c_pointer * word32 -> unit = InLine.raw_store_word8
     val i8s  : c_pointer * int32  -> unit = InLine.raw_store_int8
     val w16s : c_pointer * word32 -> unit = InLine.raw_store_word16
@@ -36,8 +39,10 @@ structure RawMemInlineT =
     val w64s : c_pointer * word64 -> unit = InLine.raw_store_word64
     val i32s : c_pointer * int32  -> unit = InLine.raw_store_int32
     val i64s : c_pointer * int64  -> unit = InLine.raw_store_int64
-    val f32s : c_pointer * real   -> unit = InLine.raw_store_float32
-    val f64s : c_pointer * real   -> unit = InLine.raw_store_float64
+    val f32s : c_pointer * real   -> unit = fn _ => raise NotSupportedYet
+    val f64s : c_pointer * real   -> unit = fn _ => raise NotSupportedYet
+    (* val f32s : c_pointer * real   -> unit = InLine.raw_store_float32 *)
+    (* val f64s : c_pointer * real   -> unit = InLine.raw_store_float64 *)
 
     (* `rawccall (addr, args, dummy)` specifies a raw C call to the
      * function with address `addr`.  The `args` and `dummy` arguments
@@ -70,8 +75,10 @@ structure RawMemInlineT =
     val subw64 : 'a * word32 -> word64 = InLine.raw_sub_word64
     val subi32 : 'a * word32 -> int32  = InLine.raw_sub_int32
     val subi64 : 'a * word32 -> int64  = InLine.raw_sub_int64
-    val subf32 : 'a * word32 -> real   = InLine.raw_sub_float32
-    val subf64 : 'a * word32 -> real   = InLine.raw_sub_float64
+    val subf32 : 'a * word32 -> real   = fn _ => raise NotSupportedYet
+    val subf64 : 'a * word32 -> real   = fn _ => raise NotSupportedYet
+    (* val subf32 : 'a * word32 -> real   = InLine.raw_sub_float32 *)
+    (* val subf64 : 'a * word32 -> real   = InLine.raw_sub_float64 *)
 
     val updw8  : 'a * word32 * word32 -> unit = InLine.raw_update_word8
     val updi8  : 'a * word32 * int32  -> unit = InLine.raw_update_int8
@@ -81,7 +88,9 @@ structure RawMemInlineT =
     val updw64 : 'a * word32 * word64 -> unit = InLine.raw_update_word64
     val updi32 : 'a * word32 * int32  -> unit = InLine.raw_update_int32
     val updi64 : 'a * word32 * int64  -> unit = InLine.raw_update_int64
-    val updf32 : 'a * word32 * real   -> unit = InLine.raw_update_float32
-    val updf64 : 'a * word32 * real   -> unit = InLine.raw_update_float64
+    val updf32 : 'a * word32 * real   -> unit = fn _ => raise NotSupportedYet
+    val updf64 : 'a * word32 * real   -> unit = fn _ => raise NotSupportedYet
+    (* val updf32 : 'a * word32 * real   -> unit = InLine.raw_update_float32 *)
+    (* val updf64 : 'a * word32 * real   -> unit = InLine.raw_update_float64 *)
 
   end (* structure RawMemInlineT *)
