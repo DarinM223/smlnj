@@ -53,4 +53,5 @@ is
 	memory.sml
 
 	linkage-dlopen.sml
-	mlrep-i32f64.sml
+	(* mlrep-i32f64.sml *)
+	mlrep-i64f64.sml

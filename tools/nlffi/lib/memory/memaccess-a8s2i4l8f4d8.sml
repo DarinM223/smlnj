@@ -30,7 +30,7 @@ structure CMemAccess : CMEMACCESS = struct
     val float_size = 0w4
     val double_size = 0w8
 
-    val load_addr = InlineT.Word64.intern o MemAccess64.load2
+    val load_addr = RawMemInlineT.w64l
     val load_uchar = RawMemInlineT.w8l
     val load_schar = RawMemInlineT.i8l
     val load_ushort = RawMemInlineT.w16l
@@ -44,7 +44,7 @@ structure CMemAccess : CMEMACCESS = struct
     val load_float = RawMemInlineT.f32l
     val load_double = RawMemInlineT.f64l
 
-    fun store_addr (a, x) = MemAccess64.store2 (a, InlineT.Word64.extern x)
+    val store_addr = RawMemInlineT.w64s
     val store_uchar = RawMemInlineT.w8s
     val store_schar = RawMemInlineT.i8s
     val store_ushort = RawMemInlineT.w16s
@@ -90,8 +90,8 @@ structure CMemAccess : CMEMACCESS = struct
     fun wrap_uint (x : MLRep.Unsigned.word) = x : cc_uint
     fun wrap_sshort (x : MLRep.Signed.int) = x : cc_sshort
     fun wrap_ushort (x : MLRep.Unsigned.word) = x : cc_ushort
-    fun wrap_slong (x : MLRep.Signed.int) = x : cc_slong
-    fun wrap_ulong (x : MLRep.Unsigned.word) = x : cc_ulong
+    fun wrap_slong (x : MLRep.LongSigned.int) = x : cc_slong
+    fun wrap_ulong (x : MLRep.LongUnsigned.word) = x : cc_ulong
     fun wrap_slonglong (x: MLRep.LongLongSigned.int) = x : cc_slonglong
     fun wrap_ulonglong (x: MLRep.LongLongUnsigned.word) = x : cc_ulonglong
     fun wrap_float (x : MLRep.Real.real) = x : cc_float
@@ -104,13 +104,13 @@ structure CMemAccess : CMEMACCESS = struct
     fun unwrap_uint (x : cc_uint) = x : MLRep.Unsigned.word
     fun unwrap_sshort (x : cc_sshort) = x : MLRep.Signed.int
     fun unwrap_ushort (x : cc_ushort) = x : MLRep.Unsigned.word
-    fun unwrap_slong (x : cc_slong) = x : MLRep.Signed.int
-    fun unwrap_ulong (x : cc_ulong) = x : MLRep.Unsigned.word
+    fun unwrap_slong (x : cc_slong) = x : MLRep.LongSigned.int
+    fun unwrap_ulong (x : cc_ulong) = x : MLRep.LongUnsigned.word
     fun unwrap_slonglong (x : cc_slonglong) = x : MLRep.LongLongSigned.int
     fun unwrap_ulonglong (x : cc_ulonglong) = x : MLRep.LongLongUnsigned.word
     fun unwrap_float (x : cc_float) = x : MLRep.Real.real
     fun unwrap_double (x : cc_double) = x : MLRep.Real.real
 
-    fun p2i (x : addr) = x : MLRep.Unsigned.word
-    fun i2p (x : MLRep.Unsigned.word) = x : addr
+    fun p2i (x : addr) = x : MLRep.LongUnsigned.word
+    fun i2p (x : MLRep.LongUnsigned.word) = x : addr
 end

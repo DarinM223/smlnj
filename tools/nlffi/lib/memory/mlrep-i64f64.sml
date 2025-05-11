@@ -1,7 +1,7 @@
-(* mlrep-i32f64.sml
+(* mlrep-i64f64.sml
  *
  *   User-visible ML-side representation of certain primitive C types.
- *   x86/Sparc/PPC version (all ints: 32 bit, all floats: 64 bit)
+ *   x86/Sparc/PPC version (ints: 32 bit and 64 bit, all floats: 64 bit)
  *
  * Copyright (c) 2004 by The Fellowship of SML/NJ
  *
@@ -9,10 +9,10 @@
  *)
 structure MLRep = struct
     structure Signed = Int32
-    structure LongSigned = Int32
+    structure LongSigned = Int64
     structure LongLongSigned = Int64
     structure Unsigned = Word32
-    structure LongUnsigned = Word32
+    structure LongUnsigned = Word64
     structure LongLongUnsigned = Word64
     structure Real = Real64
 
