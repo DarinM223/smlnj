@@ -177,6 +177,7 @@ ifdef CMB_CROSS ifdef ARCH_PPC \
 ifndef ARCH_X86 ifndef ARCH_SPARC ifndef ARCH_PPC \
 	bind rawmem = rawmem-dummy.sml (core, primitive, xcore)
 
+bind rawmem = target64-rawmem.sml (core, primitive, xcore)
 bind pp = pre-perv.sml (inline, order, xcore)
 bind ps = pre-string.sml (core, inline, pp, xcore)
 bind ss-sig = substring.sig (pp, inline, xcore)
